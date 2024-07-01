@@ -11,12 +11,12 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product extends ProductDTO {
+public class Product  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,10 +34,10 @@ public class Product extends ProductDTO {
     @Column(nullable = false)
     private String category;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String sku;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String barcode;
 
     @Column(nullable = false)
@@ -51,7 +51,7 @@ public class Product extends ProductDTO {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateAdded;
 
     @Column(nullable = false)

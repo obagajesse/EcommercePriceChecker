@@ -21,24 +21,24 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts(){
-        List<Product> products = productService.getAllProducts();
-        return ResponseEntity.ok(products);
+        List<Product> productDTOs = productService.getAllProducts();
+        return ResponseEntity.ok(productDTOs);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id){
-        ProductDTO productDTO = productService.getProductById(id);
+        ProductDTO productDTO = (ProductDTO) productService.getProductById(id);
         return ResponseEntity.ok(productDTO);
     }
 
     @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO){
-        return new ResponseEntity<>(productService.createProduct(productDTO), HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deleteProduct(@RequestBody ProductDTO productDTO){
+    public ResponseEntity<ProductDTO> deleteProduct(@RequestBody ProductDTO productDTO){
         productService.deleteProduct(productDTO.getId());
-        return new ResponseEntity<>("Product deleted", HttpStatus.OK);
+        return new ResponseEntity<>(productDTO, HttpStatus.OK);
     }
 }
