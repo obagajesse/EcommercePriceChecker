@@ -11,11 +11,10 @@ public interface ProductService {
 
     ProductDTO createProduct(ProductDTO productDTO);
 
-    ProductDTO updateProduct(ProductDTO productDTO);
 
-    ProductDTO getProduct(String productId);
+    ProductDTO getProductById(Long id);
 
-    List<ProductDTO> getProducts();
+    List<Product> getAllProducts();
 
-    void deleteProduct(String productId);
+    void deleteProduct(Long id);
 }

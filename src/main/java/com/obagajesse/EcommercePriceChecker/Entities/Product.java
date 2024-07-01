@@ -1,5 +1,7 @@
 package com.obagajesse.EcommercePriceChecker.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.obagajesse.EcommercePriceChecker.DTO.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +16,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Product extends ProductDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,10 +51,13 @@ public class Product {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date dateAdded;
 
     @Column(nullable = false)
     private boolean active;
+    
+    
 
     public Product(Long id, String name, String brand, String description, String category, String sku, String barcode, String size, String color, String imageUrl, Date dateAdded) {
         this.id = id;

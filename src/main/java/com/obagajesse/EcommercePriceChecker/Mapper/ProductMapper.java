@@ -5,7 +5,7 @@ import com.obagajesse.EcommercePriceChecker.Entities.Product;
 
 public class ProductMapper {
 
-    public static Product mapToProduct(ProductDTO productDTO){
+    public static ProductDTO mapToProduct(ProductDTO productDTO){
         return new ProductDTO(
                 productDTO.getId(),
                 productDTO.getName(),
