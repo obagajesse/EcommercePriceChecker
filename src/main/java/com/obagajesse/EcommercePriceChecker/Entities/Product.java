@@ -1,7 +1,5 @@
 package com.obagajesse.EcommercePriceChecker.Entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.obagajesse.EcommercePriceChecker.DTO.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +9,7 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Table(name = "products")
+@Table(name = "Products")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -51,7 +49,7 @@ public class Product  {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @JsonFormat(pattern = "yyyy-MM-dd")
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateAdded;
 
     @Column(nullable = false)
