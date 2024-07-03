@@ -13,7 +13,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Supermarket {
 
     @Id
@@ -34,6 +34,15 @@ public class Supermarket {
 
     @Column(nullable = false,unique = true)
     private String websiteUrl;
+
+    public Supermarket(Long id, String name, String location, String contactNumber, String email,String websiteUrl) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.contactNumber = contactNumber;
+        this.email = email;
+        this.websiteUrl = websiteUrl;
+    }
 
     @Override
     public boolean equals(Object o) {
