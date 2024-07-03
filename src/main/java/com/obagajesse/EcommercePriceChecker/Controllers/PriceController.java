@@ -35,6 +35,12 @@ public class PriceController {
         return new ResponseEntity<>(priceService.createPrice(priceDTO), HttpStatus.CREATED);
     }
 
+//    @PutMapping("/{id}update")
+//    public ResponseEntity<PriceDTO> updatePrice(@PathVariable Long id){
+//        PriceDTO priceDTO1 = priceService.updatePrice(id);
+//        return ResponseEntity.ok(priceDTO1);
+//    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<PriceDTO> deletePrice(@PathVariable Long id){
         priceService.deletePrice(id);
