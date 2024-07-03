@@ -11,7 +11,8 @@ public class PriceMapper {
                 priceDTO.getProduct_id(),
                 priceDTO.getSupermarket_id(),
                 priceDTO.getOnlineshop_id(),
-                priceDTO.getPrice()
+                priceDTO.getPrice(),
+                priceDTO.getDate()
         );
     }
 
@@ -21,7 +22,8 @@ public class PriceMapper {
                 price.getProduct(),
                 price.getSupermarket(),
                 price.getOnlineShop(),
-                price.getPrice()
+                price.getPrice(),
+                price.getDate()
         );
     }
 }

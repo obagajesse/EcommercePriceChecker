@@ -4,9 +4,12 @@ import com.obagajesse.EcommercePriceChecker.DTO.PriceDTO;
 import com.obagajesse.EcommercePriceChecker.Entities.Price;
 import com.obagajesse.EcommercePriceChecker.Mapper.PriceMapper;
 import com.obagajesse.EcommercePriceChecker.Repository.PriceRepository;
+import com.obagajesse.EcommercePriceChecker.Repository.ProductRepository;
 import com.obagajesse.EcommercePriceChecker.Service.PriceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -18,9 +21,13 @@ public class PriceServiceImpl implements PriceService {
         this.priceRepository = priceRepository;
     }
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @Override
     public PriceDTO createPrice(PriceDTO priceDTO){
         Price price = PriceMapper.mapToPrice(priceDTO);
+        price.setDate(LocalDateTime.now());
         Price savedPrice = priceRepository.save(price);
         return PriceMapper.mapToPriceDTO(savedPrice);
     }

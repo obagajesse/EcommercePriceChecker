@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "Products")
@@ -55,6 +56,9 @@ public class Product  {
 
     @Column(nullable = false)
     private boolean active;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Price> prices;
 
     public Product(Long id, String name, String brand, String description, String category, String sku, String barcode,String size, String color, String imageUrl) {
         this.id = id;

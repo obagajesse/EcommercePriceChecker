@@ -1,11 +1,14 @@
 package com.obagajesse.EcommercePriceChecker.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
@@ -36,12 +39,13 @@ public class Price {
     @Column(nullable = false)
     private double price;
 
-    @Temporal(TemporalType.TIMESTAMP)
+
     @Column(nullable = false)
-    private Date date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime date;
 
-    public Price(Long id, Long productId, Long supermarketId, Long onlineshopId, Double price) {
 
+    public Price(Long id, Long productId, Long supermarketId, Long onlineshopId, Double price, LocalDateTime date) {
     }
 
     @Override
