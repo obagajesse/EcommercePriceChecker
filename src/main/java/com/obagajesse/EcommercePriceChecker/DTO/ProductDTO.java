@@ -25,7 +25,8 @@ public class ProductDTO extends Product {
     private Date dateAdded;
     private boolean active;
 
-    public ProductDTO(long id, String name, String brand, String description, String category, String sku, String barcode, String size, String color, String imageUrl, Date dateAdded) {
+
+    public ProductDTO(Long id, String name, String brand, String description, String category, String sku, String barcode, String size, String color, String imageUrl) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -36,6 +37,6 @@ public class ProductDTO extends Product {
         this.size = size;
         this.color = color;
         this.imageUrl = imageUrl;
-        this.dateAdded = dateAdded;
+        this.active = true;
     }
 }
