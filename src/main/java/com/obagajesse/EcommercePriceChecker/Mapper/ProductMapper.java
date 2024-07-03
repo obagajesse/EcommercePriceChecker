@@ -13,6 +13,7 @@ public class ProductMapper {
                 productDTO.getDescription(),
                 productDTO.getCategory(),
                 productDTO.getSku(),
+                productDTO.getBarcode(),
                 productDTO.getSize(),
                 productDTO.getColor(),
                 productDTO.getImageUrl()

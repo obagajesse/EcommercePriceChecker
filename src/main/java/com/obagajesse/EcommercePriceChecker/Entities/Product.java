@@ -56,13 +56,14 @@ public class Product  {
     @Column(nullable = false)
     private boolean active;
 
-    public Product(Long id, String name, String brand, String description, String category, String sku, String size, String color, String imageUrl) {
+    public Product(Long id, String name, String brand, String description, String category, String sku, String barcode,String size, String color, String imageUrl) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.description = description;
         this.category = category;
         this.sku = sku;
+        this.barcode = barcode;
         this.size = size;
         this.color = color;
         this.imageUrl = imageUrl;

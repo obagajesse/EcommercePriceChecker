@@ -8,6 +8,7 @@ import com.obagajesse.EcommercePriceChecker.Service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -21,6 +22,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public  ProductDTO createProduct(ProductDTO productDTO){
         Product product = ProductMapper.mapToProduct(productDTO);
+//        product.setBarcode(UUID.randomUUID().toString());
+//        product.setSku(UUID.randomUUID().toString());
         Product savedProduct = productRepository.save(product);
         return ProductMapper.mapToProductDTO(savedProduct);
     }
