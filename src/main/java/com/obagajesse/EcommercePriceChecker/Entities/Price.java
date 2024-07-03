@@ -26,11 +26,11 @@ public class Price {
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "supermarket_id",nullable = false)
+    @JoinColumn(name = "supermarket_id")
     private Supermarket supermarket;
 
     @ManyToOne
-    @JoinColumn(name = "onlineshop_id",nullable = false)
+    @JoinColumn(name = "onlineshop_id")
     private OnlineShop onlineShop;
 
     @Column(nullable = false)
