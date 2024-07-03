@@ -11,4 +11,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         CustomErrorResponse errorResponse = new CustomErrorResponse(405,"Invalid input");
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    public ResponseEntity<CustomErrorResponse> handleResourceNotFound(ResourceNotFoundException ex){
+        CustomErrorResponse errorResponse = new CustomErrorResponse(404,"Resource not found");
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
 }

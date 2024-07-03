@@ -10,6 +10,8 @@ public interface PriceService {
 
     PriceDTO createPrice(PriceDTO priceDTO);
 
+//    PriceDTO createPrice(PriceDTO priceDTO);
+
     PriceDTO updatePrice(PriceDTO priceDTO);
 
     PriceDTO getPriceById(Long id);

@@ -45,7 +45,13 @@ public class Price {
     private LocalDateTime date;
 
 
-    public Price(Long id, Long productId, Long supermarketId, Long onlineshopId, Double price, LocalDateTime date) {
+    public Price(Long id, Long product_id, Long supermarket_id, Long onlineshop_id, Double price, LocalDateTime date) {
+        this.id = id;
+//        this.product_id = product_id;
+//        this.supermarket_id = supermarket_id;
+//        this.onlineshop_id = onlineshop_id;
+        this.price = price;
+        this.date = date;
     }
 
     @Override
