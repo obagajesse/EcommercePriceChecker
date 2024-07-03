@@ -40,6 +40,10 @@ public class Price {
     @Column(nullable = false)
     private Date date;
 
+    public Price(Long id, Long productId, Long supermarketId, Long onlineshopId, Double price) {
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
