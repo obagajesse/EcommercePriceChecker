@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Products")
@@ -55,20 +56,19 @@ public class Product  {
     @Column(nullable = false)
     private boolean active;
     
-    
 
-    public Product(Long id, String name, String brand, String description, String category, String sku, String barcode, String size, String color, String imageUrl, Date dateAdded) {
-        this.id = id;
-        this.name = name;
-        this.brand = brand;
-        this.description = description;
-        this.category = category;
-        this.sku = sku;
-        this.barcode = barcode;
-        this.size = size;
-        this.color = color;
-        this.imageUrl = imageUrl;
-        this.dateAdded = dateAdded;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return active == product.active && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(brand, product.brand) && Objects.equals(description, product.description) && Objects.equals(category, product.category) && Objects.equals(sku, product.sku) && Objects.equals(barcode, product.barcode) && Objects.equals(size, product.size) && Objects.equals(color, product.color) && Objects.equals(imageUrl, product.imageUrl) && Objects.equals(dateAdded, product.dateAdded);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, brand, description, category, sku, barcode, size, color, imageUrl, dateAdded, active);
     }
 
     @Override
