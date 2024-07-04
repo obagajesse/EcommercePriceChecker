@@ -37,6 +37,5 @@ public class ProductDTO extends Product {
         this.size = size;
         this.color = color;
         this.imageUrl = imageUrl;
-        this.active = true;
     }
 }
