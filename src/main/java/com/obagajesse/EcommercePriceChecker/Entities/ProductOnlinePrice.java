@@ -28,4 +28,7 @@ public class ProductOnlinePrice {
 
     @Column(nullable = false)
     private Double price;
+
+    public ProductOnlinePrice(Long id, Long productId, Long onlineShopId, Double price) {
+    }
 }
